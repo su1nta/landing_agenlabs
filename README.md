@@ -1,73 +1,80 @@
-# React + TypeScript + Vite
+# Agenlabs Landing
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A minimal React + TypeScript landing site powered by Vite and Tailwind CSS v4.
 
-Currently, two official plugins are available:
+- Tech stack: React 19, TypeScript 5, Vite 7, Tailwind CSS 4
+- Key files: [vite.config.ts](vite.config.ts), [package.json](package.json), [src/main.tsx](src/main.tsx), [src/App.tsx](src/App.tsx)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Getting started
 
-## React Compiler
+- Prerequisites: Node.js 18+ (recommended 20+), npm 9+
+- Install dependencies:
+  - npm install
+- Start dev server:
+  - npm run dev
+- Type-check and build:
+  - npm run build
+- Preview production build:
+  - npm run preview
+- Lint:
+  - npm run lint
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Project structure
 
-## Expanding the ESLint configuration
+- App entry and routing
+  - [src/main.tsx](src/main.tsx) – bootstraps React (StrictMode) and mounts the app
+  - [src/App.tsx](src/App.tsx) – sets up `BrowserRouter` and route table
+- UI components
+  - [`Header`](src/components/Header.tsx) – site navigation using `react-router-dom`
+  - [`Hero`](src/components/Hero.tsx) – landing hero with feature highlights
+- Pages
+  - [`Home`](src/pages/Home.tsx)
+  - [`Work`](src/pages/Work.tsx)
+  - [`Packages`](src/pages/Packages.tsx)
+  - [`Templates`](src/pages/Templates.tsx)
+  - [`Blog`](src/pages/Blog.tsx)
+- Styling
+  - [src/index.css](src/index.css) – Tailwind v4 setup and font theme
+  - [src/App.css](src/App.css) – optional app-level styles
+- Config
+  - [vite.config.ts](vite.config.ts) – Vite + React + Tailwind plugin config
+  - [tsconfig.json](tsconfig.json), [tsconfig.app.json](tsconfig.app.json), [tsconfig.node.json](tsconfig.node.json)
+  - [eslint.config.js](eslint.config.js)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Routing
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Defined in [src/App.tsx](src/App.tsx):
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- / → [`Home`](src/pages/Home.tsx)
+- /work → [`Work`](src/pages/Work.tsx)
+- /packages → [`Packages`](src/pages/Packages.tsx)
+- /templates → [`Templates`](src/pages/Templates.tsx)
+- /blog → [`Blog`](src/pages/Blog.tsx)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+The header links are declared in [`Header`](src/components/Header.tsx) and use `<Link />` from `react-router-dom`.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Styling (Tailwind v4)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- Enabled via the Tailwind Vite plugin in [vite.config.ts](vite.config.ts)
+- Base import and theme in [src/index.css](src/index.css):
+  - Imports Tailwind: `@import 'tailwindcss';`
+  - Defines a display font via `@theme` and uses it with the `font-display` utility
+- Components use utility classes (e.g., `bg-linear-to-r`, `from-indigo-600`, `to-sky-500`)
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Scripts
+
+- dev: start Vite dev server
+- build: type-check and build for production
+- preview: serve built assets locally
+- lint: run ESLint
+
+See [package.json](package.json) for details.
+
+## Notes
+
+- Fast Refresh is enabled via Vite’s React plugin.
+- Routing uses `BrowserRouter` from `react-router-dom`.
+
+## License
+
+ISC
