@@ -1,13 +1,8 @@
-interface Props {
-    avatar: string;
-    userName: string;
-    designation: string;
-    feedback: string;
-}
+import type TestimonialType from "../types/testimonial";
 
 
 function Testimonial(props: Props) {
-    const { avatar, userName, designation, feedback }: Props = props
+    const { avatar, userName, designation, feedback }: TestimonialType = props
 
     return (
         <>
