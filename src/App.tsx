@@ -9,8 +9,7 @@ import Templates from './pages/Templates';
 import Blog from './pages/Blog';
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  
   return (
     <>
       <div className="min-h-screen w-full">
