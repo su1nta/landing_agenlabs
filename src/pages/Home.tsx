@@ -4,6 +4,7 @@ import Avatar from "../assets/avatar.webp";
 import Avatar2 from "../assets/avatar.webp";
 import type TestimonialType from "../types/testimonial";
 import RecentWork from "../components/RecentWork";
+import Services from "../components/Services";
 
 interface Props {}
 function Home(props: Props) {
@@ -43,6 +44,9 @@ function Home(props: Props) {
                     designation={testimonials[1].designation}
                     feedback={testimonials[1].feedback}
                     />
+                </div>
+                <div className="mt-40">
+                    <Services />
                 </div>
             </div>
         </>

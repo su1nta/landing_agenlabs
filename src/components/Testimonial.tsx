@@ -6,10 +6,20 @@ function Testimonial(props: TestimonialType) {
 
     return (
         <>
-            <div className="relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:bg-linear-to-r after:from-transparent after:to-35% after:via-indigo-500 after:to-pink-500 left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen overflow-hidden">
+            <div className="relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:bg-linear-to-r after:from-sky-500 after:via-indigo-500 after:to-pink-400 after:mask-[linear-gradient(90deg,transparent,black_70%,black_30%,transparent)] left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen overflow-hidden">
                 <div
-                    aria-hidden="true"
-                    className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-position-[20px_30px] [-webkit-mask-image:radial-gradient(ellipse_70%_60%_at_50%_100%,#000_60%,transparent_100%)] mask-[radial-gradient(ellipse_70%_60%_at_50%_100%,#000_60%,transparent_100%)]"
+                    className="absolute inset-0 z-0"
+                    style={{
+                    backgroundImage: `
+                        linear-gradient(to right, #f5f5f5 1px, transparent 1px),
+                        linear-gradient(to bottom, #f5f5f5 1px, transparent 1px)
+                    `,
+                    backgroundSize: "40px 40px",
+                    WebkitMaskImage:
+                        "radial-gradient(ellipse 70% 60% at 50% 100%, #000 60%, transparent 100%)",
+                    maskImage:
+                        "radial-gradient(ellipse 70% 70% at 50% 100%, #000 60%, transparent 100%)",
+                    }}
                 />
                 <div className="relative mx-auto max-w-7xl px-4 py-16 flex flex-col items-center justify-center">
                     <img src={avatar} alt="Avatar" className="size-20" />
