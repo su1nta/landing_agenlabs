@@ -1,4 +1,3 @@
-import Heading from "./Heading";
 import Images11 from "../assets/8.webp";
 import Images12 from "../assets/7.webp";
 import Images21 from "../assets/10.webp";
