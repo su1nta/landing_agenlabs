@@ -5,6 +5,7 @@ import Avatar2 from "../assets/avatar.webp";
 import type TestimonialType from "../types/testimonial";
 import RecentWork from "../components/RecentWork";
 import Services from "../components/Services";
+import Footer from "../components/Footer";
 
 interface Props {}
 function Home(props: Props) {
@@ -48,6 +49,7 @@ function Home(props: Props) {
                 <div className="mt-40">
                     <Services />
                 </div>
+                <Footer />
             </div>
         </>
     )
