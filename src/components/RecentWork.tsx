@@ -41,12 +41,6 @@ function RecentWork() {
     return (
         <>
             <div className="max-w-7xl h-auto">
-                <div className="my-20">
-                    <Heading
-                        title="Recent Work"
-                        subtitle="A look at some of the amazing websites that we've built recently."
-                    />
-                </div>
                 <div className="flex flex-col gap-44 items-center justify-center">
                     {RecentWorks.map(({title, description, images}: RecentWorkType): React.ReactNode => (
                         <div className="flex gap-4 items-center ml-10">

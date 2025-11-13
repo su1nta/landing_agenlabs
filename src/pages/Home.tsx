@@ -5,7 +5,7 @@ import Avatar2 from "../assets/avatar.webp";
 import type TestimonialType from "../types/testimonial";
 import RecentWork from "../components/RecentWork";
 import Services from "../components/Services";
-import Footer from "../components/Footer";
+import Heading from "../components/Heading";
 
 interface Props {}
 function Home(props: Props) {
@@ -37,6 +37,12 @@ function Home(props: Props) {
                     feedback={testimonials[0].feedback}
                     />
                 </div>
+                <div className="my-20">
+                    <Heading
+                        title="Recent Work"
+                        subtitle="A look at some of the amazing websites that we've built recently."
+                    />
+                </div>
                 <RecentWork />
                 <div className="mt-20 w-full">
                     <Testimonial 
@@ -49,7 +55,6 @@ function Home(props: Props) {
                 <div className="mt-40">
                     <Services />
                 </div>
-                <Footer />
             </div>
         </>
     )

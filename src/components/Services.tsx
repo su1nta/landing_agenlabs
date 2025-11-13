@@ -66,7 +66,7 @@ function Services() {
 
     return (
         <>
-            <div className="flex flex-col gap-10">
+            <div id="services" className="flex flex-col gap-10">
                 <Heading
                     title="We Handle just about everything!"
                     subtitle="We handle everything from design to deployment to get your website shipped and ready to go!"

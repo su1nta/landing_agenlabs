@@ -70,7 +70,7 @@ function Hero(props: Props) {
                     <button className="relative inline-flex rounded-md p-1 group cursor-pointer transition duration-200">
                          <span className="absolute inset-0 -z-10 blur-md bg-linear-to-r from-indigo-600 via-sky-600 to-sky-500 opacity-40 group-hover:opacity-80 transition duration-200" />
                         <span 
-                        className="px-10 py-3 rounded-sm bg-neutral-50 text-neutral-500 group-hover:text-neutral-800 transition duration-200 border border-neutral-300 text-bold">
+                        className="px-10 py-3 rounded-xl bg-neutral-50 text-neutral-500 group-hover:text-neutral-800 transition duration-200 border border-neutral-300 text-bold">
                             Explore Work
                         </span>
                     </button>

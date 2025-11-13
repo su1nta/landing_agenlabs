@@ -37,6 +37,7 @@ function Header(props: Props) {
             tabNav: "/blog"
         },
     ]
+
     return (
         <>
             <div className="max-w-7xl flex items-center justify-between px-4 h-15 mx-auto">
