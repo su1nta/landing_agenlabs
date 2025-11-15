@@ -4,14 +4,12 @@ import Heading from "../components/Heading";
 import RecentWork from "../components/RecentWork";
 import Testimonial from "../components/Testimonial";
 import Avatar from "../assets/avatar.webp";
-interface Props {}
 interface PackageHighlighsType {
     title: string;
     description: string;
 }
 
-function Packages(props: Props) {
-    const {} = props
+function Packages() {
     const packageHighlights: PackageHighlighsType[] = [
         {
             title: "Top Notch Design",

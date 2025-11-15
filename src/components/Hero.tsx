@@ -2,7 +2,6 @@ import Logo from '../assets/logo.svg';
 import HeroIcon1 from '../assets/hero-icon-1.svg';
 import HeroIcon2 from '../assets/hero-icon-2.svg';
 import HeroIcon3 from '../assets/hero-icon-3.svg';
-interface Props {}
 interface FeatureType {
     id: number;
     icon: string;
@@ -10,8 +9,7 @@ interface FeatureType {
     description: string;
 }
 
-function Hero(props: Props) {
-    const {} = props
+function Hero() {
     const features: FeatureType[] = [
         {
             id: 1,

@@ -7,9 +7,7 @@ import RecentWork from "../components/RecentWork";
 import Services from "../components/Services";
 import Heading from "../components/Heading";
 
-interface Props {}
-function Home(props: Props) {
-    const {} = props
+function Home() {
     const testimonials: TestimonialType[] = [
         {
             avatar: Avatar,

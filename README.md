@@ -1,79 +1,67 @@
-# Agenlabs Landing
+# Agenlabs Template
 
-A minimal React + TypeScript landing site powered by Vite and Tailwind CSS v4.
+Modern React + TypeScript landing page starter powered by Vite and Tailwind CSS v4. It ships with ready-made sections (hero, services, testimonials, recent work, packages, templates, blog) plus smooth in-page navigation, gradient treatments, and animated UI flourishes.
 
-- Tech stack: React 19, TypeScript 5, Vite 7, Tailwind CSS 4
-- Key files: [vite.config.ts](vite.config.ts), [package.json](package.json), [src/main.tsx](src/main.tsx), [src/App.tsx](src/App.tsx)
+- Tech stack: React 19, TypeScript 5, Vite 7, Tailwind CSS 4, React Router 7
+- Features: hash-aware navigation, gradient borders and glows, responsive cards, mouse-tracked hover effects, full-bleed background treatments
+- Key entry points: [vite.config.ts](vite.config.ts), [src/main.tsx](src/main.tsx), [src/App.tsx](src/App.tsx)
 
-## Getting started
+## Getting Started
 
-- Prerequisites: Node.js 18+ (recommended 20+), npm 9+
-- Install dependencies:
-  - npm install
-- Start dev server:
-  - npm run dev
-- Type-check and build:
-  - npm run build
-- Preview production build:
-  - npm run preview
-- Lint:
-  - npm run lint
+- Install dependencies with `npm install`
+- Start the dev server with `npm run dev`
+- Production build with `npm run build`
+- Preview the built bundle via `npm run preview`
+- Lint the project with `npm run lint`
 
-## Project structure
+Prerequisites: Node.js 18+ (20+ recommended) and npm 9+.
 
-- App entry and routing
-  - [src/main.tsx](src/main.tsx) – bootstraps React (StrictMode) and mounts the app
-  - [src/App.tsx](src/App.tsx) – sets up `BrowserRouter` and route table
-- UI components
-  - [`Header`](src/components/Header.tsx) – site navigation using `react-router-dom`
-  - [`Hero`](src/components/Hero.tsx) – landing hero with feature highlights
+## Project Structure
+
+- Entry
+  - `src/main.tsx` mounts the React app in strict mode
+  - `src/App.tsx` wires `BrowserRouter`, route table, and the `ScrollToHash` helper for smooth hash scrolling
+- Components
+  - `src/components/Header.tsx` nav with hash links (`/#services`, etc.) and gradient call-to-action
+  - `src/components/Hero.tsx` marketing hero with feature list icons
+  - `src/components/Services.tsx` grid of service cards with mouse-follow glow and checkerboard flourish
+  - `src/components/Testimonial.tsx` full-bleed testimonial panel with masked background pattern
+  - `src/components/RecentWork.tsx` recent projects showcase with responsive image pairs
+  - `src/components/Footer.tsx`, `src/components/Heading.tsx` shared UI elements
 - Pages
-  - [`Home`](src/pages/Home.tsx)
-  - [`Work`](src/pages/Work.tsx)
-  - [`Packages`](src/pages/Packages.tsx)
-  - [`Templates`](src/pages/Templates.tsx)
-  - [`Blog`](src/pages/Blog.tsx)
+  - `src/pages/Home.tsx` assembles the homepage sections
+  - `src/pages/Work.tsx`, `Packages.tsx`, `Templates.tsx`, `Blog.tsx` provide dedicated marketing pages
 - Styling
-  - [src/index.css](src/index.css) – Tailwind v4 setup and font theme
-  - [src/App.css](src/App.css) – optional app-level styles
-- Config
-  - [vite.config.ts](vite.config.ts) – Vite + React + Tailwind plugin config
-  - [tsconfig.json](tsconfig.json), [tsconfig.app.json](tsconfig.app.json), [tsconfig.node.json](tsconfig.node.json)
-  - [eslint.config.js](eslint.config.js)
+  - `src/index.css` imports Tailwind (`@import 'tailwindcss';`) and defines the display font using Tailwind’s `@theme`
+  - `src/App.css` holds optional global tweaks
+- Configuration
+  - `vite.config.ts` configures React, Tailwind, and asset handling
+  - `tsconfig*.json` manage TypeScript paths and compiler options
+  - `eslint.config.js` defines linting rules
 
-## Routing
+## Routing & In-Page Links
 
-Defined in [src/App.tsx](src/App.tsx):
+Routes live in `src/App.tsx` (/, /work, /packages, /templates, /blog). Hash navigation is supported by `ScrollToHash`; any element with an `id` is scrollable via `<Link to="/#section-id">`. Section ids in use include `services`, enabling smooth scrolling from the header CTA.
 
-- / → [`Home`](src/pages/Home.tsx)
-- /work → [`Work`](src/pages/Work.tsx)
-- /packages → [`Packages`](src/pages/Packages.tsx)
-- /templates → [`Templates`](src/pages/Templates.tsx)
-- /blog → [`Blog`](src/pages/Blog.tsx)
+## UI Highlights
 
-The header links are declared in [`Header`](src/components/Header.tsx) and use `<Link />` from `react-router-dom`.
+- **Gradient treatments**: Tailwind arbitrary values render gradient borders (`bg-gradient-to-r`) and masked backgrounds
+- **Interactive glow**: `Services` cards track cursor position to move a radial gradient glow
+- **Full-bleed sections**: `Testimonial` uses negative margins and `w-screen` to escape the content column while keeping inner content centered
+- **Responsive grids**: Blog cards and recent work sections utilize Tailwind’s responsive grid utilities
 
-## Styling (Tailwind v4)
+## Customization Tips
 
-- Enabled via the Tailwind Vite plugin in [vite.config.ts](vite.config.ts)
-- Base import and theme in [src/index.css](src/index.css):
-  - Imports Tailwind: `@import 'tailwindcss';`
-  - Defines a display font via `@theme` and uses it with the `font-display` utility
-- Components use utility classes (e.g., `bg-linear-to-r`, `from-indigo-600`, `to-sky-500`)
+- Update colors, spacing, or fonts via Tailwind utility classes or extend the theme in `src/index.css`
+- Add sections by composing new components under `src/components/` and referencing them in the desired page file
+- Adjust the hash-scrolling behavior (offsets, focus) inside `ScrollToHash` if you introduce sticky headers of varying heights
 
-## Scripts
+## Available Scripts
 
-- dev: start Vite dev server
-- build: type-check and build for production
-- preview: serve built assets locally
-- lint: run ESLint
-
-See [package.json](package.json) for details.
-
-## Notes
-
-- Fast Refresh is enabled via Vite’s React plugin.
-- Routing uses `BrowserRouter` from `react-router-dom`.
+- `npm run dev` – start the Vite dev server with hot module replacement
+- `npm run build` – run type checking and emit a production bundle
+- `npm run preview` – locally preview the production build
+- `npm run lint` – lint the codebase with ESLint
 
 ## License
 

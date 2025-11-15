@@ -3,10 +3,7 @@ import RecentWork from "../components/RecentWork"
 import Testimonial from "../components/Testimonial"
 import Avatar from "../assets/avatar.webp";
 
-interface Props {}
-
-function Work(props: Props) {
-    const {} = props
+function Work() {
 
     return (
         <>

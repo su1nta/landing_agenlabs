@@ -4,10 +4,8 @@ import BannerTwo from "../assets/3.webp";
 import Testimonial from "../components/Testimonial";
 import Avatar from "../assets/avatar2.webp";
 
-interface Props {}
 
-function Templates(props: Props) {
-    const {} = props
+function Templates() {
 
     return (
         <>

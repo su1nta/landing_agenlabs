@@ -1,10 +1,8 @@
 
 import { useNavigate } from 'react-router-dom';
 import Logo from '../assets/logo.svg';
-interface Props {}
 
-function Footer(props: Props) {
-    const {} = props
+function Footer() {
     const navigate = useNavigate();
 
     return (

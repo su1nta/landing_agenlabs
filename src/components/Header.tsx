@@ -1,16 +1,14 @@
 import Logo from '../assets/logo.svg';
 import Menu from '../assets/menu.svg';
 import { useNavigate, Link } from 'react-router-dom';
-interface Props {}
 interface HeaderLinkType {
     tabId: number;
     tabName: string;
     tabNav: string;
 }
 
-function Header(props: Props) {
-    const {} = props
-    let navigate = useNavigate();
+function Header() {
+    const navigate = useNavigate();
     const headerLink: HeaderLinkType[] = [
         {
             tabId: 1,
