@@ -40,7 +40,7 @@ function Header(props: Props) {
     ]
 
     const handleMenu = () => {
-        
+
     }
 
     return (
@@ -63,7 +63,7 @@ function Header(props: Props) {
                 </div>
                 <div className="relative">
                     <button className="relative inline-flex rounded-full p-1 bg-linear-to-r from-indigo-600 via-sky-600 to-sky-500 group cursor-pointer hover:shadow-lg transition duration-200">
-                        <span className="px-6 py-2 rounded-full bg-neutral-200 text-neutral-500 group-hover:text-neutral-800 transition duration-200">Contact</span>
+                        <span className="px-6 py-2 rounded-full bg-neutral-200 text-neutral-600 transition duration-200">Contact</span>
                     </button>
                 </div>
             </div>

@@ -53,15 +53,15 @@ function Packages(props: Props) {
     return (
         <>
             <div className="mx-auto mt-20 flex flex-col w-full max-w-7xl items-center gap-8 px-6">
-                <div className="flex w-full items-start gap-10">
-                    <div className="max-w-sm text-start space-y-4">
+                <div className="flex flex-col lg:flex-row w-full items-start gap-10">
+                    <div className="max-w-sm text-center lg:text-start mx-auto lg:mx-0 space-y-4">
                         <h4 className="text-xl text-sky-600">Landing Page Development</h4>
                         <h2 className="text-5xl font-bold">$4,995</h2>
                         <p className="text-neutral-500">
                             A landing page can make or break your business. We create world-class, professional
                             landing pages that convert and help you achieve your sales targets.
                         </p>
-                        <button className="flex items-center gap-2 rounded-md bg-neutral-900 px-4 py-3 text-white transition duration-200 hover:bg-neutral-700">
+                        <button className="flex mx-auto lg:mx-0 items-center gap-2 rounded-md bg-neutral-900 px-4 py-3 text-white transition duration-200 hover:bg-neutral-700">
                             Buy Package
                             <img src={LinkImg} alt="Go" className="size-5 opacity-60" />
                         </button>

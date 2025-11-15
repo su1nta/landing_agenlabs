@@ -78,11 +78,11 @@ function Services() {
                                     key={title}
                                     onMouseMove={handleMouseMove}
                                     onMouseLeave={handleMouseLeave}
-                                    className="group relative text-start overflow-hidden rounded-3xl border border-neutral-200 bg-linear-to-br from-white via-neutral-50 to-white p-6 transition hover:-translate-y-1 hover:shadow-lg [--mouse-x:50%] [--mouse-y:50%]"
+                                    className="group cursor-pointer relative text-start overflow-hidden rounded-3xl border border-neutral-200 bg-linear-to-br from-white via-neutral-50 to-white p-6 transition hover:-translate-y-1 hover:shadow-lg [--mouse-x:50%] [--mouse-y:50%]"
                                 >
-                                    <span
-                                        className="pointer-events-none absolute top-0 -z-10 left-0 h-full w-full origin-top-left transform-gpu rotate-0 scale-[1.35] skew-y-[8deg] skew-z-[8deg] bg-[linear-gradient(45deg,#e2e8f0_25%,transparent_25%,transparent_75%,#e2e8f0_75%),linear-gradient(45deg,#e2e8f0_25%,transparent_25%,transparent_75%,#e2e8f0_75%)] bg-size-[20px_20px] bg-position-[0_0,10px_10px] opacity-40 transition duration-500 ease-out"
-                                    />
+                                    {/* <span
+                                        className="pointer-events-none absolute top-0 -z-10 left-0 h-full w-full origin-left transform-gpu translate-3d -translate-z-200 translate-x-30 perspective-distant rotate-0 scale-[1.35] skew-y-[8deg] skew-z-[8deg] opacity-40 transition duration-500 ease-out"
+                                    /> */}
                                     <span className="pointer-events-none absolute inset-0 opacity-0 blur-xl transition duration-300 group-hover:opacity-50 group-hover:bg-[radial-gradient(240px_circle_at_var(--mouse-x)_var(--mouse-y),rgba(5,223,114,0.45)_0%,transparent_70%)]" />
                                     <img src={icon} alt="" className="h-8 w-8" />
                                     <h3 className="mt-6 text-lg font-semibold text-neutral-800">{title}</h3>
