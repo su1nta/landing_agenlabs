@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import Logo from '../assets/logo.svg';
 import Menu from '../assets/menu.svg';
 import { useNavigate, Link } from 'react-router-dom';
@@ -9,6 +10,7 @@ interface HeaderLinkType {
 
 function Header() {
     const navigate = useNavigate();
+    const [menuIsOpen, setMenuIsOpen] = useState(false);
     const headerLink: HeaderLinkType[] = [
         {
             tabId: 1,
@@ -35,25 +37,40 @@ function Header() {
             tabName: "Blog",
             tabNav: "/blog"
         },
-    ]
+    ];
 
     const handleMenu = () => {
-
+        setMenuIsOpen(isOpen => (!isOpen));
     }
 
+    const handleLinkVisit = () => {
+        setMenuIsOpen(false);
+    }
     return (
         <>
             <div className="w-full relative lg:max-w-7xl flex items-center justify-between px-4 h-15 mx-auto">
-                <div className="relative flex gap-2 items-center cursor-pointer" onClick={() => {navigate('/')}}>
+                <div className="relative flex gap-2 items-center cursor-pointer">
                     <div className="md:hidden">
                         <img src={Menu} alt="Menu" className="p-1 mr-3 cursor-pointer bg-neutral-100" onClick={handleMenu} />
                     </div>
-                    <img src={Logo} alt="Logo" className="size-4" />
-                    <span className="text-lg font-display font-semibold tracking-wide">Agenlabs</span>
+                    <div className="flex gap-2 items-center justify-center" onClick={() => navigate('/')}>
+                        <img src={Logo} alt="Logo" className="size-4" />
+                        <span className="text-lg font-display font-semibold tracking-wide">Agenlabs</span>
+                    </div>
                 </div>
-                <div id="mobile-menu" className="absolute h-full w-full hidden top-0 translate-y-15 bg-neutral-300">
-
-                </div>
+                {menuIsOpen && 
+                    (<div id="mobile-menu" className="absolute p-4 rounded-lg top-0 translate-y-15 bg-neutral-100 transition duration-200">
+                        <div className="relative gap-4 text-md flex flex-col">
+                            {headerLink.map(({ tabId, tabName, tabNav }: HeaderLinkType): React.ReactNode => (
+                                <Link 
+                                    key={tabId} 
+                                    to={tabNav}
+                                    onClick={handleLinkVisit} 
+                                    className="cursor-pointer text-neutral-500 hover:text-neutral-700 transition-colors duration-200">{tabName}</Link>
+                            ))}
+                        </div>
+                    </div>)
+                }
                 <div className="relative gap-8 text-md hidden md:flex">
                     {headerLink.map(({ tabId, tabName, tabNav }: HeaderLinkType): React.ReactNode => (
                         <Link key={tabId} to={tabNav} className="cursor-pointer text-neutral-500 hover:text-neutral-700 transition-colors duration-200">{tabName}</Link>

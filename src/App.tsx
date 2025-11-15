@@ -35,6 +35,7 @@ function App() {
               <Route path='templates' element={<Templates />} />
               <Route path='blog' element={<Blog />} />
             </Route>
+            <Route path="*" element={<Home />} />
           </Routes>
           <Footer />
         </BrowserRouter>
