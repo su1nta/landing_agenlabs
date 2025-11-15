@@ -37,7 +37,7 @@ function Hero(props: Props) {
             <div className="mx-auto max-w-6xl flex flex-col font-display items-center gap-4">
                 <div className="flex items-center flex-col gap-10">
                     <img src={Logo} alt="Logo" className="size-10" />
-                    <h1 className="text-7xl font-semibold text-neutral-700">
+                    <h1 className="text-6xl lg:text-7xl font-semibold text-neutral-700">
                         Web Apps that 
                         <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-500 to-pink-400"> Make Sense.</span>
                     </h1>
@@ -47,7 +47,7 @@ function Hero(props: Props) {
                         stage for your next project.
                     </p>
                 </div>
-                <div className="flex gap-4 mt-10">
+                <div className="flex flex-col lg:flex-row gap-4 mt-10">
                     {
                         features.map(({id, icon, title, description }: FeatureType): React.ReactNode => (
                             <div key={id} className="p-2 flex gap-3">

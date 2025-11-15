@@ -42,11 +42,11 @@ function RecentWork() {
             <div className="max-w-7xl h-auto">
                 <div className="flex flex-col gap-44 items-center justify-center">
                     {RecentWorks.map(({title, description, images}: RecentWorkType): React.ReactNode => (
-                        <div className="flex gap-4 items-center ml-10">
-                            <div className="flex flex-col text-start items-start mr-15">
-                                <h4 className="text-2xl text-neutral-700 font-semibold tracking-wider leading-snug mb-5">{title}</h4>
+                        <div className="flex flex-col lg:flex-row gap-4 items-center lg:ml-10 mx-auto">
+                            <div className="flex flex-col text-center lg:text-start items-start lg:mr-15">
+                                <h4 className="text-2xl text-neutral-700 font-semibold tracking-wider leading-snug mb-5 mx-auto lg:mx-0">{title}</h4>
                                 <p className="max-w-xs text-sm tracking-wider text-neutral-500 leading-6 mb-5">{description}</p>
-                                <div className="group">
+                                <div className="group mx-auto lg:mx-0">
                                     <button className="px-4 py-2 bg-black text-white rounded-lg group-hover:bg-neutral-700 transition duration-200">Live Preview</button>
                                 </div>
                             </div>
