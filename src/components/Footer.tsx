@@ -35,7 +35,7 @@ function Footer() {
                         <img src={Logo} alt="Logo" className="size-4" />
                         <span className="text-lg font-display font-semibold tracking-wide">Agenlabs</span>
                     </div>
-                    <span className="text-sm text-neutral-400 mx-auto">© 2025 Agency Template. All rights reserved.</span>
+                    <span className="text-sm text-neutral-400 mx-auto">Inspired from Manu Arora of <span className='font-bold text-neutral-500'>Aceternity UI</span>.</span>
                 </div>
             </div>
         </>
